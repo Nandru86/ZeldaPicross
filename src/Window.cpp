@@ -38,7 +38,7 @@ SDL_Surface* init(bool* zoom) {             // initialise SDL
         return NULL;
     }
 	
-    atexit(SDL_Quit);
+//    atexit(SDL_Quit);
 	
     SDL_WM_SetCaption("Zelda Picross",NULL);
 //    SDL_Surface* icon = SDL_LoadBMP("data/images/logos/crayon.ico");
@@ -132,8 +132,8 @@ void Window::loop() {
     
     delete gpKeyboard;
     
-    SDL_FreeSurface(gpScreen2);
-    SDL_FreeSurface(gpScreen3);
+    if (gpScreen2 != NULL) SDL_FreeSurface(gpScreen2);
+    if (gpScreen3 != NULL) SDL_FreeSurface(gpScreen3);
     
 }
 
